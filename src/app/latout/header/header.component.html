@@ -1,0 +1,104 @@
+<header class="main-header">
+    <!--  logo  -->
+    <div class="logo-holder"><a href="index.html"><img src="assets/images/logohome.png" alt=""></a></div>
+    <!-- logo end  -->
+    <!-- nav-button-wrap--> 
+    <div class="nav-button-wrap color-bg nvminit">
+        <div class="nav-button">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <!-- nav-button-wrap end-->	
+    <!-- header-search button  -->
+    <div class="header-search-button">
+        <i class="fal fa-search"></i>
+        <span>Search...</span>
+    </div>
+    <!-- header-search button end  -->
+    <!--  add new  btn -->
+    <div class="add-list_wrap">
+        <a href="dashboard-add-listing.html" class="add-list color-bg"><i class="fal fa-plus"></i> <span>Devenir Hote</span></a>
+    </div>
+    <!--  add new  btn end -->
+    <!--  header-opt_btn -->
+    
+    <!--  header-opt_btn end -->
+    <!--  cart-btn   -->
+    <div class="cart-btn  tolt show-header-modal" data-microtip-position="bottom"  data-tooltip="Notification">
+        <i class="fal fa-bell"></i>
+        <span class="cart-btn_counter color-bg">5</span>
+    </div>
+    <!--  cart-btn end -->
+    <!--  login btn -->
+    <div class="show-reg-form modal-open"><i class="fas fa-user"></i><span>Se connecter</span></div>
+    <!--  login btn  end -->
+    <!--  navigation --> 
+    <div class="nav-holder main-menu">
+        <nav>
+            <ul class="no-list-style">
+                <li>
+                    <a routerLink="" >Accueil </a>
+                </li>
+                <li>
+                    <a routerLink="/listing">maison d'hotes</a>
+                </li>
+                <li>
+                    <a routerLink="/blog_page">Actualités</a>
+                </li>
+                <li><a routerLink="/contact">Contact</a></li>
+                
+           
+            </ul>
+        </nav>
+    </div>
+    <!-- navigation  end -->
+    <!-- header-search-wrapper -->
+    <div class="header-search-wrapper novis_search">
+       
+        <div class="custom-form">
+            <form method="post"  name="registerform">
+                <label>Mot clé </label>
+                <input type="text" placeholder="Address , Street , State..." value=""/>
+                
+                <label style="margin-top:10px;" >Échelle des prix</label>
+                <div class="price-rage-item fl-wrap">
+                    <input type="text" class="price-range" data-min="100" data-max="100000"  name="price-range1"  data-step="1" value="1" data-prefix="$">
+                </div>
+                <button onclick="location.href='listing.html'" type="button"  class="btn float-btn color-bg"><i class="fal fa-search"></i> Search</button>
+            </form>
+        </div>
+    </div>
+    <!-- header-search-wrapper end  -->				
+    <!-- wishlist-wrap--> 
+    <div class="header-modal novis_wishlist tabs-act">
+    
+        <!--tabs -->                       
+        <div class="tabs-container">
+            <div class="tab">
+                <!--tab -->
+<app-notification></app-notification>
+            </div>
+            <!--tabs end -->							
+        </div>
+    </div>
+    <!--wishlist-wrap end -->                            
+
+</header>
+<app-signin></app-signin>
+<!-- <app-notification></app-notification> -->
+
+<div class="secondary-nav">
+    <ul>
+        <li><a href="listing.html" class="tolt" data-microtip-position="left"  data-tooltip="Réserver une maison d'hote"> <i class="fal fa-shopping-bag"></i></a></li>
+    </ul>
+    <div class="progress-indicator">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="-1 -1 34 34">
+            <circle cx="16" cy="16" r="15.9155"
+                class="progress-bar__background" />
+            <circle cx="16" cy="16" r="15.9155"
+                class="progress-bar__progress 
+                js-progress-bar" />
+        </svg>
+    </div>
+</div>
