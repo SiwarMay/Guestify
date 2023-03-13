@@ -1,19 +1,41 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
+@Injectable({
+  providedIn: 'root'
+})
 
-//   constructor(private http: HttpClient) { }
+export class AuthService {
 
-//   private url = 'http://127.0.0.1:3000/author/';
+  constructor( private http: HttpClient) { }
+  
+  private url = 'http://127.0.0.1:3000/user/';
 
-//   register(author: any){
-//     return this.http.post(this.url + 'register' , author);
+  register( user: any ){
 
-//   }
+    return this.http.post(this.url + 'register' , user);
 
+  }
 
-// }
+  login(user: any){
+    return this.http.post(this.url + 'login' , user);
+
+  } 
+
+  isLoggedIn(){
+    let token = localStorage.getItem('token');
+    if(token){
+      return true;
+    }
+    else{return false;}
+  }
+
+  getAuthorDataFromToken(){
+    let token = localStorage.getItem('token');
+    if(token){
+      let data = JSON.parse(window.atob(token.split('.')[1]))
+      return data;
+    }
+  }
+
+}

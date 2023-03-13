@@ -1,26 +1,84 @@
-<div class="tab">
-    <div id="tab-2" class="tab-content">
-        <div class="custom-form">
-            <form method="post"   name="registerform" class="main-register-form" id="main-register-form2">
-                <label >Full Name  * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
-                <input [(ngModel)]="author.name"  type="text" placeholder="Your Name"    onClick="this.select()" value="">
+<br><br> <br><br> <br><br> 
+<!-- <form method="post"   name="registerform" class="main-register-form" id="main-register-form2">
+    <label >Nom * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
+    <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre nom"  >
+    <label >Prénom  * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
+    <input [(ngModel)]="user.lastname" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre prénom">
+    
+    <label>Email  * <span class="dec-icon"><i class="fal fa-envelope"></i></span></label>
+    <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" type="text"  placeholder="Votre adresse mail"  >
+    <div class="pass-input-wrap fl-wrap">
+        <label >Mot de passe* <span class="dec-icon"><i class="fal fa-key"></i></span></label>
+        <input [(ngModel)]="user .password" [ngModelOptions]="{standalone: true}" type="password" placeholder="Votre mot de passe"  autocomplete="off"   >
+        <span class="eye"><i class="fal fa-eye"></i> </span>
+    </div>
+    <input type="file" (change)="select($event)" class="form-control m-1" placeholder="image">
+    
+    <div class="clearfix"></div>
+    <button (click)="register()"  type="submit"     class="log_btn color-bg"> Register </button>
+</form> -->
+<div >
+
+<!-- dasboard-widget-title end -->
+<!-- dasboard-widget-box  -->
+<div class="form-group">
+    <div class="custom-form">
+        <div class="row">
+            <div class="col-md-4"></div>
                 
-                <label>Email Address  * <span class="dec-icon"><i class="fal fa-envelope"></i></span></label>
-                <input [(ngModel)]="author.email" type="text"  placeholder="Your Mail"   onClick="this.select()" value="">
-                <label >Phone<span class="dec-icon"><i class="fal fa-phone"></i></span></label>
-                <input [(ngModel)]="author.phone" type="text" placeholder="Your Phone"    onClick="this.select()" value="">
-                <div class="pass-input-wrap fl-wrap">
-                    <label >Password  * <span class="dec-icon"><i class="fal fa-key"></i></span></label>
-                    <input [(ngModel)]="author.password" type="password" placeholder="Your Password"  autocomplete="off"  onClick="this.select()" value="" >
-                    <span class="eye"><i class="fal fa-eye"></i> </span>
-                </div>
-                <div class="filter-tags ft-list">
-                    <input id="check-a2" type="checkbox" name="check">
-                    <label for="check-a2">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a></label>
-                </div>
-                <div class="clearfix"></div>
-                <button  type="submit"     class="log_btn color-bg"> Register </button>
-            </form>
+            
+            <div class="col-md-4">  <div class="section-title fl-wrap">
+                <h2>S'inscrire</h2>
+            </div>  </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>    
+            <div class="col-md-4">
+                <label >Nom * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
+                <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre nom"  >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div> 
+            <div class="col-sm-4">		 
+                <label >Prénom  * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
+                <input [(ngModel)]="user.lastname" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre prénom">
+            </div>
+        </div>
+         
+        <div class="row">
+            <div class="col-md-4">
+            </div> 
+            <div class="col-sm-4">		 
+                <label >Email  * <span class="dec-icon"><i class="fal fa-envelope"></i></span></label>
+                <input [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre Email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div> 
+            <div class="col-sm-4">		 
+                <label >Mot de passe  * <span class="dec-icon"><i class="fal fa-random"></i></span></label>
+                <input [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" type="text" placeholder="Votre Mot de passe">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div> 
+            <div class="col-sm-4">		 
+                <input type="file" (change)="select($event)" class="form-control m-1" placeholder="image"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div> 
+            <div class="col-md-4">
+                <button (click)="register()"  type="submit"     class="log_btn color-bg"> Register </button>
+            </div> 
+            
         </div>
     </div>
+</div>
 </div>

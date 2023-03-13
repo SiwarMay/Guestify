@@ -1,0 +1,226 @@
+<app-main></app-main>
+
+  
+        <div id="wrapper">
+              	
+                <div class="dashboard-content">
+                    
+                    <div >
+                        <!-- dashboard-title -->	
+                        <div class="dashboard-title fl-wrap">
+                            <div class="dashboard-title-item"><span>Add Listing</span></div>
+                            <div class="dashbard-menu-header">
+                                <div class="dashbard-menu-avatar fl-wrap">
+                                    <img src="images/avatar/5.jpg" alt="">
+                                    <h4>Welcome, <span>Alica Noory</span></h4>
+                                </div>
+                                <a href="index.html" class="log-out-btn   tolt" data-microtip-position="bottom"  data-tooltip="Log Out"><i class="far fa-power-off"></i></a>
+                            </div>
+                            <!--Tariff Plan menu-->
+                         
+                            <!--Tariff Plan menu end-->						
+                        </div>
+                        <!-- dashboard-title end -->		
+                        <div class="dasboard-wrapper fl-wrap no-pag">
+                            <div class="dasboard-scrollnav-wrap scroll-to-fixed-fixed scroll-init2 fl-wrap">
+                                <ul>
+                                    <li><a href="#sec1" class="act-scrlink">Info</a></li>
+                                    <li><a href="#sec2">Location</a></li>
+                                    <li><a href="#sec3">Media</a></li>
+                                    <li><a href="#sec4">Details</a></li>
+                                    <li><a href="#sec5">Rooms</a></li>
+                                    <li><a href="#sec6">Plans</a></li>
+                                    <li><a href="#sec7">Widgets</a></li>
+                                </ul>
+             
+                            </div>
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title fl-wrap" id="sec1">
+                                <h5><i class="fas fa-info"></i>Basic Informations</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box fl-wrap">
+                                <div class="custom-form">
+                                    <div class="row">
+                                        <div class="col-sm-4">		 
+                                            <label>Nom  <span class="dec-icon"><i class="far fa-briefcase"></i></span></label>
+                                            <input [(ngModel)]="maison.nom" type="text" placeholder="Nom du maison" value=""/>
+                                        </div>                              
+                                        <div class="col-sm-4">		 
+                                            <label>Prix  <span class="dec-icon"><i class="far fa-money-bill-wave"></i></span></label>
+                                            <input [(ngModel)]="maison.prix" type="text" placeholder="Prix" value=""/>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label>Description  <span class="dec-icon"><i class="far fa-key"></i></span></label>
+                                            <input [(ngModel)]="maison.description" type="text" placeholder="Description du maison" value=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dasboard-widget-box  end-->
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap" id="sec2">
+                                <h5><i class="fas fa-street-view"></i>Localisation / Contacts</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap">
+                                <div class="custom-form">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Adresse <span class="dec-icon"><i class="far fa-map-marker"></i></span></label>
+                                            <input [(ngModel)]="maison.adresse" type="text" placeholder="Adresse de maison" value=""/>
+                                        </div>    
+                                    </div> 
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>Gouvernerat</label>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="gouvernerat" class="chosen-select no-search-select" >
+                                                    <option>Ariana</option>
+                                                    <option>Béja</option>
+                                                    <option>Ben Arous</option>
+                                                    <option>Bizerte</option>
+                                                    <option>Gabès</option>
+                                                    <option>Gafsa</option>
+                                                    <option>Jendouba</option>
+                                                    <option>Kairouan</option>
+                                                    <option>Kasserine</option>
+                                                    <option>Kébili</option>
+                                                    <option>kef</option>
+                                                    <option>Mahdia</option>
+                                                    <option>Manouba</option>
+                                                    <option>Médenine</option>
+                                                    <option>Nabeul</option>
+                                                    <option>Sfax</option>
+                                                    <option>Sidi Bouzid</option>
+                                                    <option>Siliana</option>
+                                                    <option>Sousse</option>
+                                                    <option>Tataouine</option>
+                                                    <option>Tozeur</option>
+                                                    <option>Tunis</option>
+                                                    <option>Zaghouan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Télèphone <span class="dec-icon"><i class="far fa-phone"></i> </span> </label>
+                                            <input [(ngModel)]="maison.tele" type="text" placeholder="+(216)00000000" value=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dasboard-widget-box  end-->							
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap" id="sec3">
+                                <h5><i class="fas fa-image"></i>Images</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap">
+                                <div class="custom-form">
+                                    <div class="clearfix"></div>
+                                    <div class="listsearch-input-item fl-wrap">
+                                        <form class="fuzone">
+                                            <div class="fu-text">
+                                                <span><i class="far fa-cloud-upload-alt"></i> Click here or drop files to upload</span>
+                                                <div class="photoUpload-files fl-wrap"></div>
+                                            </div>
+                                            <input type="file" (change)="select($event)"  class="upload" multiple>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dasboard-widget-box  end-->						
+                            <!-- dasboard-widget-title -->
+                            <div class="dasboard-widget-title dwb-mar fl-wrap" id="sec4">
+                                <h5><i class="fas fa-list"></i>Details</h5>
+                            </div>
+                            <!-- dasboard-widget-title end -->
+                            <!-- dasboard-widget-box  -->
+                            <div class="dasboard-widget-box   fl-wrap">
+                                <div class="custom-form">
+                                    <div class="row">
+                                     
+                                            <div class="colone">
+                                                <div class="col-sm-3">
+                                                    <label>Surface: <span class="dec-icon"><i class="far fa-sort-size-down-alt"></i></span></label>
+                                                    <input [(ngModel)]="maison.surface" type="text"placeholder="Surface de maison" value=""/>											 											
+                                                </div>  
+                                                <div class="col-sm-3">
+                                                    <label>Chambres: <span class="dec-icon"><i class="far fa-bed"></i></span></label>
+                                                    <input [(ngModel)]="maison.chambres" type="text" placeholder="nbr de Chambres" value=""/>
+                                                </div>   
+                                                <div class="col-sm-3">
+                                                <label>Salle de Bain: <span class="dec-icon"><i class="far fa-bath"></i></span></label>
+                                                    <input [(ngModel)]="maison.salledebain" type="text" placeholder="nbr de Salle de Bain" value=""/>												
+                                                </div>    
+                                                <div class="col-sm-3">
+                                                <label>Garage: <span class="dec-icon"><i class="far fa-warehouse"></i></span></label>
+                                                    <input [(ngModel)]="maison.garage" type="text" placeholder="Nbr de voitures" value=""/>														
+                                                </div>
+                                   
+                                      
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <label>Caracteristique: </label>
+                                    <div class=" add-list-tags fl-wrap">
+                                        <!-- Checkboxes -->
+                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
+                                            <li>
+                                                <input id="check-aaa5" type="checkbox" name="check" checked>
+                                                <label for="check-aaa5"> Wi Fi</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-bb5" type="checkbox" name="check" checked>
+                                                <label for="check-bb5">Pool</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-dd5" type="checkbox" name="check">
+                                                <label for="check-dd5"> Security</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-cc5" type="checkbox" name="check">
+                                                <label for="check-cc5"> Laundry Room</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-ff5" type="checkbox" name="check" checked>
+                                                <label for="check-ff5"> Equipped Kitchen</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-c4" type="checkbox" name="check">
+                                                <label for="check-c4">Air Conditioning</label>
+                                            </li>
+                                            <li>
+                                                <input id="check-c18" type="checkbox" name="check">
+                                                <label for="check-c18">Parking</label>
+                                            </li>
+                                        </ul>
+                                        <!-- Checkboxes end -->												
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dasboard-widget-box  end-->						
+                        
+                            <!-- dasboard-widget-title end -->													
+                            <!-- dasboard-widget-box  -->
+                            
+                           
+                           
+                            <button (click)="create()" class="btn  color-bg float-btn">Ajouter</button>
+                            
+                        </div>
+                    </div>
+            
+              			
+                    </div>
+         
+              
+                </div>
+      
+        </div>
+    
+
+

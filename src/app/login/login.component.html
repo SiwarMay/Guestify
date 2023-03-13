@@ -1,0 +1,43 @@
+
+
+            <!-- dasboard-widget-title end -->
+            <!-- dasboard-widget-box  -->
+            <div class="form-group">
+                <div class="custom-form">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                            
+                        
+                        <div class="col-md-4">  <div class="section-title fl-wrap">
+                            <h2>S'inscrire</h2>
+                        </div>  </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>    
+                        <div class="col-md-4">
+                            <label>Username or Email Address  * <span class="dec-icon"><i class="fal fa-user"></i></span></label>
+                            <input [(ngModel)]="user.email" type="text"  placeholder="Your Name or Mail"  onClick="this.select()" value="">
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div> 
+                        <div class="col-sm-4">		 
+                            <label >Password  * <span class="dec-icon"><i class="fal fa-key"></i></span></label>
+                            <input [(ngModel)]="user.password" name="password" placeholder="Your Password" type="password"  autocomplete="off" onClick="this.select()" value="" >
+                            </div>
+                    </div>
+                     
+                   
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div> 
+                        <div class="col-md-4">
+                            <button (click)="login()"  type="submit"     class="log_btn color-bg"> Register </button>
+                        </div> 
+                        
+                    </div>
+                </div>
+            </div>
+            

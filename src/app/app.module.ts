@@ -6,7 +6,6 @@ import { HeaderComponent } from './latout/header/header.component';
 import { FooterComponent } from './latout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { SigninComponent } from './signin/signin.component';
 import { BlogListComponent } from './home/blog-list/blog-list.component';
 import { CoverComponent } from './home/cover/cover.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -23,7 +22,11 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ListingComponent } from './listing/listing.component';
 import { HomeDetailComponent } from './home-detail/home-detail.component';
-import { DetailMaisonComponent } from './detail-maison/detail-maison.component'
+import { DetailMaisonComponent } from './detail-maison/detail-maison.component';
+import { DashboardProComponent } from './dashboard-pro/dashboard-pro.component';
+import { AjoutMaisonComponent } from './dashboard-pro/ajout-maison/ajout-maison.component';
+import { MainComponent } from './dashboard-pro/main/main.component'
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,7 @@ import { DetailMaisonComponent } from './detail-maison/detail-maison.component'
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    SigninComponent,
+    MainComponent,
     BlogListComponent,
     CoverComponent,
     NotfoundComponent,
@@ -48,6 +51,10 @@ import { DetailMaisonComponent } from './detail-maison/detail-maison.component'
     ListingComponent,
     HomeDetailComponent,
     DetailMaisonComponent,
+    DashboardProComponent,
+    AjoutMaisonComponent,
+    MainComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,5 +65,6 @@ import { DetailMaisonComponent } from './detail-maison/detail-maison.component'
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
