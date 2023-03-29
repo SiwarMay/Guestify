@@ -13,7 +13,15 @@ export class DataService {
 
   create(maison:any){
     return this.http.post(this.url+'ajout', maison );
+ 
+  } 
 
-    
+  getAll(){
+    return this.http.get(this.url + 'all');
   }
+
+  getMaisonById(id:any){
+    return this.http.get(this.url + 'getbyid/' + id)
+  }
+  
 }

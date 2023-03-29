@@ -49,7 +49,7 @@
                                         </div>                              
                                         <div class="col-sm-4">		 
                                             <label>Prix  <span class="dec-icon"><i class="far fa-money-bill-wave"></i></span></label>
-                                            <input [(ngModel)]="maison.prix" type="text" placeholder="Prix" value=""/>
+                                            <input [(ngModel)]="maison.prix" type="number" placeholder="Prix" value=""/>
                                         </div>
                                         <div class="col-sm-4">
                                             <label>Description  <span class="dec-icon"><i class="far fa-key"></i></span></label>
@@ -78,10 +78,8 @@
                                         <div class="col-sm-6">
                                             <label>Gouvernerat</label>
                                             <div class="listsearch-input-item">
-                                                <select data-placeholder="gouvernerat" class="chosen-select no-search-select" >
-                                                    <option>Ariana</option>
+                                                <select  [(ngModel)]="maison.gouvernerat" type="text" data-placeholder="gouvernerat" class="chosen-select no-search-select" >
                                                     <option>Béja</option>
-                                                    <option>Ben Arous</option>
                                                     <option>Bizerte</option>
                                                     <option>Gabès</option>
                                                     <option>Gafsa</option>
@@ -91,7 +89,6 @@
                                                     <option>Kébili</option>
                                                     <option>kef</option>
                                                     <option>Mahdia</option>
-                                                    <option>Manouba</option>
                                                     <option>Médenine</option>
                                                     <option>Nabeul</option>
                                                     <option>Sfax</option>
@@ -104,10 +101,6 @@
                                                     <option>Zaghouan</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label>Télèphone <span class="dec-icon"><i class="far fa-phone"></i> </span> </label>
-                                            <input [(ngModel)]="maison.tele" type="text" placeholder="+(216)00000000" value=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -123,12 +116,16 @@
                                 <div class="custom-form">
                                     <div class="clearfix"></div>
                                     <div class="listsearch-input-item fl-wrap">
-                                        <form class="fuzone">
-                                            <div class="fu-text">
-                                                <span><i class="far fa-cloud-upload-alt"></i> Click here or drop files to upload</span>
-                                                <div class="photoUpload-files fl-wrap"></div>
+                                     <form class="fuzone">
+                                          <div class="fu-text">
+                                            <span><i class="far fa-cloud-upload-alt"></i> {{image.length > 0 ? image.length + ' files selected' : 'Click here or drop files to upload'}}</span>
+                                            <div class="photoUpload-files fl-wrap">
+                                              <ul>
+                                                <li *ngFor="let file of image">{{file.name}}</li>
+                                              </ul>
                                             </div>
-                                            <input type="file" (change)="select($event)"  class="upload" multiple>
+                                          </div>
+                                          <input type="file" (change)="select($event)" class="upload" multiple>
                                         </form>
                                     </div>
                                 </div>
@@ -147,59 +144,30 @@
                                             <div class="colone">
                                                 <div class="col-sm-3">
                                                     <label>Surface: <span class="dec-icon"><i class="far fa-sort-size-down-alt"></i></span></label>
-                                                    <input [(ngModel)]="maison.surface" type="text"placeholder="Surface de maison" value=""/>											 											
+                                                    <input [(ngModel)]="maison.surface" type="number"placeholder="Surface de maison" value=""/>											 											
                                                 </div>  
                                                 <div class="col-sm-3">
                                                     <label>Chambres: <span class="dec-icon"><i class="far fa-bed"></i></span></label>
-                                                    <input [(ngModel)]="maison.chambres" type="text" placeholder="nbr de Chambres" value=""/>
+                                                    <input [(ngModel)]="maison.chambres" type="number" placeholder="nbr de Chambres" value=""/>
                                                 </div>   
                                                 <div class="col-sm-3">
                                                 <label>Salle de Bain: <span class="dec-icon"><i class="far fa-bath"></i></span></label>
-                                                    <input [(ngModel)]="maison.salledebain" type="text" placeholder="nbr de Salle de Bain" value=""/>												
+                                                    <input [(ngModel)]="maison.salledebain" type="number" placeholder="nbr de Salle de Bain" value=""/>												
                                                 </div>    
                                                 <div class="col-sm-3">
                                                 <label>Garage: <span class="dec-icon"><i class="far fa-warehouse"></i></span></label>
-                                                    <input [(ngModel)]="maison.garage" type="text" placeholder="Nbr de voitures" value=""/>														
+                                                    <input [(ngModel)]="maison.garage" type="number" placeholder="Nbr de voitures" value=""/>														
                                                 </div>
                                    
                                       
                                     </div>
                                     <div class="clearfix"></div>
+                                    <ul><li *ngFor="let item of maison.caracteristiques">
+                                            {{item}}
+                                    </li></ul>
                                     <label>Caracteristique: </label>
-                                    <div class=" add-list-tags fl-wrap">
-                                        <!-- Checkboxes -->
-                                        <ul class="fl-wrap filter-tags no-list-style ds-tg">
-                                            <li>
-                                                <input id="check-aaa5" type="checkbox" name="check" checked>
-                                                <label for="check-aaa5"> Wi Fi</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-bb5" type="checkbox" name="check" checked>
-                                                <label for="check-bb5">Pool</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-dd5" type="checkbox" name="check">
-                                                <label for="check-dd5"> Security</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-cc5" type="checkbox" name="check">
-                                                <label for="check-cc5"> Laundry Room</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-ff5" type="checkbox" name="check" checked>
-                                                <label for="check-ff5"> Equipped Kitchen</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-c4" type="checkbox" name="check">
-                                                <label for="check-c4">Air Conditioning</label>
-                                            </li>
-                                            <li>
-                                                <input id="check-c18" type="checkbox" name="check">
-                                                <label for="check-c18">Parking</label>
-                                            </li>
-                                        </ul>
-                                        <!-- Checkboxes end -->												
-                                    </div>
+                                    <input [(ngModel)]="maison.caracteristiques" type="text" placeholder="Agréments" value=""/>														
+                                    <button class="btn btn-dark w-25" (click)="maison.caracteristiques.push(caracteristique);" caracteristique=""> Ajouter</button>
                                 </div>
                             </div>
                             <!-- dasboard-widget-box  end-->						
@@ -222,5 +190,4 @@
       
         </div>
     
-
 

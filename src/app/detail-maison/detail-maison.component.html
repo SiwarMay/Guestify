@@ -1,19 +1,21 @@
+<app-header></app-header>
 <div id="wrapper">
     <!-- content -->	
     <div class="content">
-        <section class="hidden-section   single-hero-section" data-scrollax-parent="true" id="sec1">
-            <div class="bg-wrap bg-parallax-wrap-gradien">
-                <div class="bg par-elem "  data-bg="assets/images/bg/1.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
-            </div>
+        <div *ngFor="let item of maisons">
+            <section class="hidden-section   single-hero-section" data-scrollax-parent="true" id="sec1">
+                <div [routerLink]="['/maison', item._id]" class="bg-wrap bg-parallax-wrap-gradien">
+                    <div class="bg par-elem" [attr.data-bg]="'http://127.0.0.1:3000/getimage/' + item.images[0]" data-scrollax="properties: { translateY: '30%' }"></div>
+                </div>
             <div class="container">
               
                 <!--  list-single-header-item-->
                 <div class="list-single-header-item no-bg-list_sh fl-wrap">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>House in Financial District <span class="verified-badge tolt" data-microtip-position="bottom"  data-tooltip="Verified"><i class="fas fa-check"></i></span></h1>
+                            <h1>{{maison.nom}} <span class="verified-badge tolt" data-microtip-position="bottom"  data-tooltip="Verified"><i class="fas fa-check"></i></span></h1>
                             <div class="geodir-category-location fl-wrap">
-                                <a href="#"><i class="fas fa-map-marker-alt"></i>  70 Bright St New York, USA</a> 
+                                <a href="#"><i class="fas fa-map-marker-alt"></i>  {{maison.adresse}} , {{maison.gouvernerat}}</a> 
                                 <div class="listing-rating card-popup-rainingvis" data-starrating2="4"><span class="re_stars-title">Good</span></div>
                             </div>
                             <div class="share-holder hid-share">
@@ -23,13 +25,14 @@
                         </div>
                     </div>
                     <div class="list-single-header-footer fl-wrap">
-                        <div class="list-single-header-price" data-propertyprise="50500"><strong>Price:</strong><span>$</span>50.500</div>
-                        <div class="list-single-header-date"><span>Date:</span>20.05.2020</div>
+                        <div class="list-single-header-price" data-propertyprise="50500"><strong>Prix:</strong><span>$</span>{{maison.prix}}</div>
+                        <div class="list-single-header-date"><span>Date:</span>{{maison.datedepot | date}}</div>
                         
                     </div>
                 </div>
             </div>
         </section>
+    </div>
         <div class="breadcrumbs fw-breadcrumbs smpar fl-wrap">
             <div class="container">
                 
@@ -158,7 +161,7 @@
                                     <div class="inline-facts">
                                         <i class="fal fa-bed"></i>
                                         <h6>chambres</h6>
-                                        <span>3 </span><span>chambres / </span><span> 4 </span><span>lits</span>
+                                        <span>{{maison.chambre}} </span><span>chambres </span>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->
@@ -167,7 +170,7 @@
                                     <div class="inline-facts">
                                         <i class="fal fa-bath"></i>
                                         <h6>Salles de bain</h6>
-                                        <span>3 </span><span>Salles de bain</span>
+                                        <span>{{maison.salledebain}} </span><span>Salles de bain</span>
                                     </div>
                                 </div>
                                 <!-- inline-facts end -->                                                                        
@@ -179,9 +182,7 @@
                                         <h3>Description</h3>
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
-                                        <p>Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim.   </p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
-                                        
+                                        <p>{{maison.description}}</p> 
                                     </div>
                                 </div>
                                 <!-- list-single-main-item end -->                                          
@@ -193,113 +194,17 @@
                                     <div class="list-single-main-item_content fl-wrap">
                                         <div class="details-list">
                                             <ul>
-                                                <li><span>Superficie</span>850 m2</li>
-                                                <li><span>Salles de bain</span>3</li>
-                                                <li><span>chambres</span>3</li>
+                                                <li><span>Superficie</span>{{maison.surface}} m2</li>
+                                                <li><span>Salles de bain</span>{{maison.salledebain}}</li>
+                                                <li><span>chambres</span>{{maison.chambres}}</li>
                                                 
-                                                <li><span>Garage </span>2 garages</li>
-                                                <li><span>Prix/nuité</span>$ 50.500.00</li>
+                                                <li><span>Garage </span>{{maison.garage}} voitures</li>
+                                                <li><span>Prix/nuité</span>dt {{maison.prix}}</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- list-single-main-item end -->  
-                                <!--   list-single-main-item -->
-                                <div class="list-single-main-item fl-wrap" id="sec4">
-                                    <div class="list-single-main-item-title fl-wrap">
-                                        <h3>Available Rooms</h3>
-                                    </div>
-                                    <!--   rooms-container -->
-                                    <div class="rooms-container fl-wrap">
-                                        <!--  rooms-item -->
-                                        <div class="rooms-item fl-wrap">
-                                            <div class="rooms-media">
-                                                <img src="assets/images/all/10.jpg" alt="">
-                                                <div class="dynamic-gal more-photos-button color-bg" data-dynamicPath="[{'src': 'assets/images/all/10.jpg'}, {'src': 'assets/images/all/2.jpg'},{'src': 'assets/images/all/3.jpg'}]"><i class="fas fa-camera"></i> <span>3 photos</span>  </div>
-                                            </div>
-                                            <div class="rooms-details">
-                                                <div class="rooms-details-header fl-wrap">
-                                                    <span class="rooms-area">44<strong> / sq ft</strong></span>
-                                                    <h3>Standard Family Room</h3>
-                                                    <h5>Additional Rooms: <span>Guest Bath</span></h5>
-                                                </div>
-                                                <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <div class="facilities-list fl-wrap">
-                                                    <ul>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Air conditioner"><i class="fal fa-snowflake"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Tv Inside"><i class="fal fa-tv"></i> </li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Bed Inside"><i class="fal fa-bed"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Fireplace"><i class="fal fa-fireplace"></i> </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--  rooms-item end -->
-                                        <!--  rooms-item -->
-                                        <div class="rooms-item fl-wrap">
-                                            <div class="rooms-media">
-                                                <img src="assets/images/all/11.jpg" alt="">
-                                                <div class="dynamic-gal more-photos-button color-bg" data-dynamicPath="[{'src': 'assets/images/all/11.jpg'}, {'src': 'assets/images/all/12.jpg'} ]"><i class="fas fa-camera"></i> <span>2 photos</span>  </div>
-                                            </div>
-                                            <div class="rooms-details">
-                                                <div class="rooms-details-header fl-wrap">
-                                                    <span class="rooms-area">18<strong> / sq ft</strong></span>
-                                                    <h3>Modern Bathroom</h3>
-                                                    <h5>Additional Rooms: <span>Sauna</span></h5>
-                                                </div>
-                                                <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <div class="facilities-list fl-wrap">
-                                                    <ul>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Ceramic bath"><i class="fal fa-bath"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Multifunctional Shower"><i class="fal fa-shower"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Sauna"> <i class="fal fa-hot-tub"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Panoramic windows"><i class="fal fa-columns"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--  rooms-item end -->												
-                                        <!--  rooms-item -->
-                                        <div class="rooms-item fl-wrap">
-                                            <div class="rooms-media">
-                                                <img src="assets/images/all/13.jpg" alt="">
-                                                <div class="dynamic-gal more-photos-button color-bg" data-dynamicPath="[{'src': 'assets/images/all/13.jpg'}, {'src': 'assets/images/all/14.jpg'},{'src': 'assets/images/all/15.jpg'}]"><i class="fas fa-camera"></i> <span>3 photos</span>  </div>
-                                            </div>
-                                            <div class="rooms-details">
-                                                <div class="rooms-details-header fl-wrap">
-                                                    <span class="rooms-area">27<strong> / sq ft</strong></span>
-                                                    <h3>Spacious Kitchen</h3>
-                                                    <h5>Additional Rooms: <span>Pantry</span></h5>
-                                                </div>
-                                                <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <div class="facilities-list fl-wrap">
-                                                    <ul>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Microwave"><i class="fal fa-washer"></i> </li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Panoramic Windows"><i class="fal fa-columns"></i></li>
-                                                        <li class="tolt" data-microtip-position="top"  data-tooltip="Refrigerator"><i class="fal fa-temperature-frigid"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--  rooms-item end -->												
-                                    </div>
-                                    <!--   rooms-container end -->
-                                </div>
-                                <!-- list-single-main-item end -->											
-                                                                        
-                                <!-- list-single-main-item -->
-                                <div class="list-single-main-item fl-wrap" id="sec5">
-                                    <div class="list-single-main-item-title">
-                                        <h3>Video</h3>
-                                    </div>
-                                    <div class="list-single-main-item_content fl-wrap">
-                                        <div class="video-box fl-wrap">
-                                            <img src="assets/images/all/7.jpg" class="respimg" alt="">
-                                            <a class="video-box-btn image-popup color-bg" href="https://vimeo.com/158059890"><i class="fas fa-play"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- list-single-main-item end -->                                             
+                                <!-- list-single-main-item end -->                                              
                                 <!-- list-single-main-item -->
                                 <div class="list-single-main-item fl-wrap">
                                     <div class="list-single-main-item-title">
@@ -458,7 +363,7 @@
                                         <ul class="no-list-style">
                                             <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="#">+7(123)987654</a></li>
                                             <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="#">JessieWilcox@domain.com</a></li>
-                                            <li><span><i class="fal fa-browser"></i> Website :</span> <a href="#">themeforest.net</a></li>
+                                            
                                         </ul>
                                     </div>
                                     <div class="profile-widget-footer fl-wrap">
@@ -554,6 +459,5 @@
         </div>
     </div>
     <!-- content end -->	
-
-
 </div>
+<app-footer></app-footer>

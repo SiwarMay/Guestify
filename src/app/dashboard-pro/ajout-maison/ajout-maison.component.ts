@@ -19,48 +19,53 @@ export class AjoutMaisonComponent {
       chambres:'',
       salledebain:'',
       garage:'',
-      //gouvernerat:'',
-      //caracteristiques:[],
-    }
+      gouvernerat:'',
+      caracteristiques: [],
+    };
 
-
-    image:any;
-
-
-    select(e: any){
-      this.image = e.target.files[0];
-    }
-
-
+    
     constructor(private _auth: AuthService, private data: DataService, private router: Router){}
-      ngOnInit(): void{
-        
-      }
-      create(){
-        let fd =  new FormData()
-        fd.append('nom', this.maison.nom)
-        fd.append('prix', this.maison.prix)
-        fd.append('description', this.maison.description)
-        fd.append('tele', this.maison.tele)
-        fd.append('surface', this.maison.surface)
-        fd.append('adresse', this.maison.adresse)
-        fd.append('chambres', this.maison.chambres)
-        fd.append('salledebain', this.maison.salledebain)
-        fd.append('garage', this.maison.garage)
-        fd.append('image', this.image)
-        fd.append('iduser',this._auth.getAuthorDataFromToken()._iduser)
+    
+    caracteristique: any = '';
+    
+    image: File[] = [];
 
+    select(event: any):void{
+      this.image = event.target.files;    
+    }
 
+    ngOnInit(): void{}
+
+    create(){
+        let fd =  new FormData();
+        fd.append('nom', this.maison.nom);
+        fd.append('prix', this.maison.prix);
+        fd.append('description', this.maison.description);
+        fd.append('tele', this.maison.tele);
+        fd.append('surface', this.maison.surface);
+        fd.append('adresse', this.maison.adresse);
+        fd.append('chambres', this.maison.chambres);
+        fd.append('salledebain', this.maison.salledebain);
+        fd.append('gouvernerat', this.maison.gouvernerat);
+        fd.append('garage', this.maison.garage);
+        fd.append('caracteristiques', this.maison.caracteristiques);
+        fd.append('iduser',this._auth.getAuthorDataFromToken()._iduser);
+       
+       
+        for (let i = 0; i < this.image.length; i++) {
+          fd.append('images', this.image[i], this.image[i].name);
+        }
+     
         this.data.create(fd)
           .subscribe(
             res=>{
-                this.router.navigate(['/home'])
+                this.router.navigate(['/home']);
             },
             err=>{
               console.log(err);
             }
-          )
-      }
-
-
+          );
     }
+}
+
+

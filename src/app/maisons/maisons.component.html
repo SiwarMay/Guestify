@@ -1,0 +1,209 @@
+<app-header></app-header>
+            <!-- wrapper  -->	
+            <div id="wrapper">
+                <!-- content -->	
+                <div class="content">
+                    <!--  section  -->
+                    <section class="hidden-section single-par2  " data-scrollax-parent="true">
+                        <div class="bg-wrap bg-parallax-wrap-gradien">
+                            <div class="bg par-elem "  data-bg="assets/images/bg/Tunisienne.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                        </div>
+                        <div class="container">
+                            <div class="section-title center-align big-title">
+                                <h2><span>Touts Les maisons d'hotes</span></h2>
+                                <h4></h4>
+                            </div>
+                            <div class="scroll-down-wrap">
+                                <div class="mousey">
+                                    <div class="scroller"></div>
+                                </div>
+                                <span>défiler vers le bas pour découvrir.</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!--  section  end-->
+                    <div class="breadcrumbs fw-breadcrumbs sp-brd fl-wrap">
+                        <div class="container">
+                            <div class="breadcrumbs-list">
+                              <a href="#">Accueil</a>
+                                <span>Maisons</span>
+                            </div>
+                            <div class="share-holder hid-share">
+                                <a href="#" class="share-btn showshare sfcs">  <i class="fas fa-share-alt"></i>  Partager  </a>
+                                <div class="share-container  isShare"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- breadcrumbs end -->
+                    <!-- col-list-wrap -->
+                    <section class="gray-bg small-padding ">
+                        <div class="container">
+                            <div class="mob-nav-content-btn  color-bg show-list-wrap-search ntm fl-wrap">Filtres</div>
+                            <!-- list-searh-input-wrap-->
+                            <div class="list-searh-input-wrap box_list-searh-input-wrap lws_mobile fl-wrap">
+                                <div class="list-searh-input-wrap-title fl-wrap"><i class="far fa-sliders-h"></i><span>Rechercher par Filtres</span></div>
+                                <div class="custom-form fl-wrap">
+                                    <div class="row">							
+                                        <!-- listsearch-input-item -->
+                                        <div class="col-sm-9">
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Où allez-vous" class="chosen-select" >
+                                                    <option>Ariana</option>
+                                                    <option>Béja</option>
+                                                    <option>Ben Arous</option>
+                                                    <option>Bizerte</option>
+                                                    <option>Gabès</option>
+                                                    <option>Gafsa</option>
+                                                    <option>Jendouba</option>
+                                                    <option>Kairouan</option>
+                                                    <option>Kasserine</option>
+                                                    <option>Kébili</option>
+                                                    <option>kef</option>
+                                                    <option>Mahdia</option>
+                                                    <option>Manouba</option>
+                                                    <option>Médenine</option>
+                                                    <option>Nabeul</option>
+                                                    <option>Sfax</option>
+                                                    <option>Sidi Bouzid</option>
+                                                    <option>Siliana</option>
+                                                    <option>Sousse</option>
+                                                    <option>Tataouine</option>
+                                                    <option>Tozeur</option>
+                                                    <option>Tunis</option>
+                                                    <option>Zaghouan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="listsearch-input-item">
+                                                <a href="#" class="btn color-bg fw-btn float-btn small-btn">Rechercher</a>										
+                                            </div>
+                                        </div><div class="reset-form reset-btn"> <i class="far fa-sync-alt"></i> Reset Filters</div>
+                                        <!-- listsearch-input-item --> 						
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- list-searh-input-wrap end-->							
+                            <!-- list-main-wrap-header-->
+                            <div class="list-main-wrap-header box-list-header fl-wrap">
+                                <!-- list-main-wrap-title-->
+                                <div class="list-main-wrap-title">
+                                    <h2>Resultats de : <span>New York </span><strong>8</strong></h2>
+                                </div>
+                                <!-- list-main-wrap-title end-->
+                                <!-- list-main-wrap-opt-->
+                                <div class="list-main-wrap-opt">
+                                    <!-- price-opt-->
+                                    <div class="price-opt">
+                                        <span class="price-opt-title">Sort   by:</span>
+                                        <div class="listsearch-input-item">
+                                            <select data-placeholder="Popularity" class="chosen-select no-search-select" >
+                                                <option>Popularity</option>
+                                                <option>Average rating</option>
+                                                <option>Price: low to high</option>
+                                                <option>Price: high to low</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- price-opt end-->
+                                    
+                                </div>
+                                <!-- list-main-wrap-opt end-->                    
+                            </div>
+                          <!-- grid-item-holder-->	
+        <div class="grid-item-holder gallery-items gisp fl-wrap"class="row">
+            <div *ngFor="let item of maisons">
+                <!-- gallery-item-->
+               
+                    <!-- listing-item -->
+                    <div class="listing-item" class="col-md-4">
+                        <article class="geodir-category-listing fl-wrap" >
+                            <div class="geodir-category-img fl-wrap">
+                            <a [routerLink]="['/maison', item._id]" class="geodir-category-img_item">
+                                    <img [src]="'http://127.0.0.1:3000/getimage/' + item.images[0]"  alt="">
+                                    <div class="overlay"></div>
+                                </a>
+                                <div class="geodir-category-location">
+                                    <a href="#" class="single-map-item tolt" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"   data-microtip-position="top-left" data-tooltip="On the map"><i class="fas fa-map-marker-alt"></i> <span> {{item.adresse}} ,  {{item.gouvernerat}} </span></a>
+                                </div>
+                                <a href="#" class="geodir_save-btn tolt" data-microtip-position="left" data-tooltip="Save"><span><i class="fal fa-heart"></i></span></a>
+                                <a href="#" class="compare-btn tolt" data-microtip-position="left" data-tooltip="Compare"><span><i class="fal fa-random"></i></span></a>
+                               
+                            </div>
+                            <div class="geodir-category-content fl-wrap">
+                                <h3 class="title-sin_item"><a [routerLink]="['/maison', item._id]">{{item.nom}}</a></h3>
+                                <div class="geodir-category-content_price">dt {{item.prix}} / per month</div>
+                                <div class="geodir-category-content-details">
+                                    <ul>
+                                        <li><i class="fal fa-bed"></i><span>{{item.chambres}}</span></li>
+                                        <li><i class="fal fa-bath"></i><span>{{item.salledebain}}</span></li>
+                                        <li><i class="fal fa-cube"></i><span>{{item.surface}}</span></li>
+                                    </ul>
+                                </div>
+                                <div class="geodir-category-footer fl-wrap">
+                                    <a href="agent-single.html" class="gcf-company"><img src="images/avatar/2.jpg" alt=""><span>Created at: {{item.datedepot | date}}</span></a>
+                                    <div class="listing-rating card-popup-rainingvis tolt" data-microtip-position="top" data-tooltip="Good" data-starrating2="4"></div>
+                                </div>
+                            </div>
+    
+                        </article>
+                     </div>
+                 
+                    <!-- listing-item end-->															
+               
+                <!-- gallery-item end-->
+             
+                                <!-- listing-item end-->					
+                            </div>
+                            <!-- listing-item-wrap end-->
+                            <!-- pagination-->
+                            <div class="pagination">
+                                <a href="#" class="prevposts-link"><i class="fa fa-caret-left"></i></a>
+                                <a href="#" >1</a>
+                                <a href="#" class="current-page">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#" class="nextposts-link"><i class="fa fa-caret-right"></i></a>
+                            </div>
+                            <!-- pagination end-->						
+                        </div>    </div>
+                    </section>
+                    <div class="limit-box fl-wrap"></div>
+                
+                </div>
+                <!-- content end -->	
+                <!-- subscribe-wrap -->	
+                <div class="subscribe-wrap fl-wrap">
+                    <div class="container">
+                        <div class="subscribe-container fl-wrap color-bg">
+                            <div class="pwh_bg"></div>
+                            <div class="mrb_dec mrb_dec3"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="subscribe-header">
+                                        <h4>newsletter</h4>
+                                        <h3>Sign up for newsletter and get latest news and update</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                    <div class="footer-widget fl-wrap">
+                                        <div class="subscribe-widget fl-wrap">
+                                            <div class="subcribe-form">
+                                                <form id="subscribe">
+                                                    <input class="enteremail fl-wrap" name="email" id="subscribe-email" placeholder="Enter Your Email" spellcheck="false" type="text">
+                                                    <button type="submit" id="subscribe-button" class="subscribe-button color-bg">  Subscribe</button>
+                                                    <label for="subscribe-email" class="subscribe-message"></label>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- subscribe-wrap end -->	
+       
+   
+<app-footer></app-footer>
